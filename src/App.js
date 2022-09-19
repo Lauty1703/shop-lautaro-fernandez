@@ -1,16 +1,21 @@
 import "./App.css";
-//import ItemListContainer from "./components/ItemsListContainer";
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import ItemListContainer from "./components/ItemsListContainer";
 import Navbar from "./components/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer"
 
-const  App=()=> {
+const App = () => {
   return (
-    <div>
-    <Navbar />
-   {/* < ItemListContainer/>*/}
-    <ItemDetailContainer />
-    </div>
-    );
+
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route  path="/" element={< ItemListContainer  />}></Route>
+        <Route  path="/categoryId/:id" element={< ItemListContainer  />}></Route>
+        <Route  path="/item/:id" element ={<ItemDetailContainer />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

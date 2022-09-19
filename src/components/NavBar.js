@@ -1,8 +1,9 @@
 import CartWidget from "./CartWidget"
+import { Link } from "react-router-dom";
 const Navbar =()=> {
     return <><nav className="navbar navbar-expand-lg  navbar-light bg-light sticky-top shadow p-3 mb-5 bg-body rounded" id="botonera">
       <div className="container">
-        <a className="navbar-brand title-icono" href="index.html">ICE <span className="title-shop"> SHOP</span></a>
+      <Link className="navbar-brand title-icono" to="/">ICE<span className="title-shop"> SHOP</span></Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -10,13 +11,13 @@ const Navbar =()=> {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 " id="lista">
             <li className="nav-item">
-              <a className="nav-link " href="index.html">CATALOGO 1</a>
+            <Link className="nav-link " to="/categoryId/2">OFERTAS</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link " href="index.html">CATALOGO 2</a>
+              <Link className="nav-link " to="/categoryId/3">PRODUCTOS</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link " href="index.html">CATALOGO 3</a>
+            <Link className="nav-link " to="/categoryId/1">TOP</Link>
             </li>
           </ul>
           <div><CartWidget /></div>

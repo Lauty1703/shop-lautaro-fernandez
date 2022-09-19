@@ -1,57 +1,58 @@
 let products=[{
     id: 1,
-    nombre: 'helado de crema ',
+    categoryId:1,
+    nombre: 'helado de chocolate ',
     codigo: '0111202',
-    precio: 2500,
+    precio: 3000,
     imagen: "https://i.ibb.co/1zffcnp/oferta2.jpg",
     descripcion_corta: 'helado de crema y oreo de 1 kilo',
     descripcion: 'la mejor combinacion de de galletitas oreo y crema americana'
 }, {
     id: 2,
+    categoryId:3,
     nombre: 'helado de dulce de leche ',
     codigo: '2100240',
     precio: 2000,
     imagen: "https://i.ibb.co/6tgqCVf/oferta1.jpg",
     descripcion_corta: 'helado cofler de 1 kilo',
-    descripcion: 'Heladera Side By Side. Cap.bruta 584L/neta 527L. Color Acero Inoxidable. Controles externos c/display Digital. Fabricadora de Hielo. Alarma de puerta abierta. Luz LED. Estantes de vidrio. Modo vacaciones. EE: A+.'
 },{
     id: 3,
+    categoryId:3,
     nombre: 'helado de frutilla ',
     codigo: '2195461',
-    precio: 1850,
+    precio: 2780,
     imagen: "https://i.ibb.co/XCGfSYn/oferta3.jpg",
     descripcion_corta: 'helado cofler de 1 kilo',
-    descripcion: 'Split PRIA EVOLUTION. Frio-calor de 3001frigorias. 4 capacidades de Frio-calor. Display. Selector de Temperaturas. Eficiencia Energetica: Refrigeracion: A / Calefaccion: C.'
 
 }
 ,{
     id: 4,
+    categoryId:3,
     nombre: 'helado de chocolate',
     codigo: '2192034',
-    precio: 2000,
+    precio: 2190,
     imagen: "https://i.ibb.co/S541325/oferta5.jpg",
     descripcion_corta: 'helado coffee de 1 kilo',
-    descripcion: 'Split PRIA EVOLUTION. Frio-calor de 3001frigorias. 4 capacidades de Frio-calor. Display. Selector de Temperaturas. Eficiencia Energetica: Refrigeracion: A / Calefaccion: C.'
 
 }
 ,{
     id: 5,
+    categoryId:2,
     nombre: 'galletas de chocolate',
     codigo: '1694810',
-    precio: 1850,
+    precio: 1500,
     imagen: "https://i.ibb.co/S541325/oferta5.jpg" ,
     descripcion_corta: 'helado de galletas de chocolate 1 kilo',
-    descripcion: 'Split PRIA EVOLUTION. Frio-calor de 3001frigorias. 4 capacidades de Frio-calor. Display. Selector de Temperaturas. Eficiencia Energetica: Refrigeracion: A / Calefaccion: C.'
 
 }
 ,{
     id: 6,
+    categoryId:2,
     nombre: 'helado de galleta de cholate',
     codigo: '1964785',
-    precio: 1900,
+    precio: 1550,
     imagen: "https://i.ibb.co/1zffcnp/oferta2.jpg" ,
     descripcion_corta: 'helado nestle de galleta de chocolate de 1 kilo',
-    descripcion: 'Split PRIA EVOLUTION. Frio-calor de 3001frigorias. 4 capacidades de Frio-calor. Display. Selector de Temperaturas. Eficiencia Energetica: Refrigeracion: A / Calefaccion: C.'
 
 }];
 export default products

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Item = ({id,title,imagen,precio}) => {
   return (
     <section className="container col-sm 12 col-md 2  col-lg 3  mb-5" id={id}>
@@ -12,6 +12,7 @@ const Item = ({id,title,imagen,precio}) => {
               <h3 className="card-title">{title}</h3>
               <p className="card-text fs-3"> ${precio}</p>
               <button className='btn bg-primary text-white w-75'>Comprar</button>
+              <Link className="nav-link " to={`/item/${id}`}>DETAILLE</Link>
             </div>
           </div>
         </div>
