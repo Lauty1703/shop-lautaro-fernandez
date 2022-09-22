@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import ItemCount from "./ItemCount"
+import Cart from './Cart';
 
 function ItemDetail({ producto }) {
+
+    const [contador,setIContador]=useState(0);
+
+    const onAdd=(qty)=>{
+        alert(`you have selected ${qty} items.`)
+        setIContador(qty)
+        
+    }
+
     return (
         <div class="card mb-3">
             <div class="row g-0">
@@ -25,10 +36,17 @@ function ItemDetail({ producto }) {
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4 mt-5">
-                    <ItemCount initial={1} stock={5} />
-                    </div>
+                
             </div>
+            <div class="col-md-12 ">
+                    {contador === 0 ?
+                    <ItemCount initial={contador} stock={5} onAdd={onAdd} ></ItemCount>:
+                    <Link to="/cart" element={<Cart/>}>
+                          <button type="button" className="btn btn-primary">Finalizar compra</button>
+                    </Link>
+
+                    }
+                </div>
         </div>
 
     )
