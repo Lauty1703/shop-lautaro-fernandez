@@ -20,7 +20,7 @@ const Navbar =()=> {
             <Link className="nav-link " to="/categoryId/1">TOP</Link>
             </li>
           </ul>
-          <div><CartWidget /></div>
+          <div> <Link className="nav-link " to="/cart"><CartWidget /></Link></div>
 
         </div>
       </div>
