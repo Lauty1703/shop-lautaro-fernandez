@@ -15,6 +15,7 @@ function ItemDetail({ producto }) {
         setIContador(qty)
         ctx.addItem(producto,qty)
         
+        
     }
 
     return (
@@ -44,7 +45,7 @@ function ItemDetail({ producto }) {
             </div>
             <div class="col-md-12 ">
                     {contador === 0 ?
-                    <ItemCount initial={contador} stock={5} onAdd={onAdd} ></ItemCount>:
+                    <ItemCount initial={contador} stock={5} onAdd={onAdd}  ></ItemCount>:
                     <Link to="/cart" element={<Cart/>}>
                           <button type="button" className="btn btn-primary">Finalizar compra</button>
                     </Link>

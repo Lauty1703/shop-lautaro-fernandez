@@ -8,19 +8,16 @@ const CarContextProvider = ({children})=>{
 
     
     const addItem = (producto, qty) => {
-        setCartList([...cartList, producto]);
 
-        // if (isInCart(qty.id)) {
-		// 	setCartList(
-		// 		cartList.map((product) => {
-		// 			return product.id === qty.id
-		// 				? { ...product, quantity: product.quantity + quantity }
-		// 				: product;
-		// 		}),
-		// 	);
-		// } else {
-		// 	setCartList([...cartList, { ...qty, quantity }]);
-		// }
+        setCartList([...cartList,producto])
+        if(isInCart(producto.id)===undefined){
+            producto.qty=qty;
+        setCartList([...cartList, producto]);
+        }else{setCartList(cartList.map(product=>product.id===producto.id?{...product,qty:product.qty+qty}:product));
+
+       
+
+}
 
     }
 
@@ -33,7 +30,7 @@ const CarContextProvider = ({children})=>{
     }
 
     const isInCart = (id) => {
-        return cartList.find(item => item.id === id) ? true : false;
+        return cartList.find(item => item.id === id);
     }
 
     return(

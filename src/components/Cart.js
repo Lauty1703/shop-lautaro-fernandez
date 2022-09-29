@@ -22,6 +22,7 @@ const Cart = () => {
               <div className='col-md-6 '>
                 <h2 className='text-dark'>{Item.nombre}</h2>
                 <p className='fs-2  '>${Item.precio}</p>
+                <p className='fs-2  '>cantidad: {Item.qty}</p>
               </div>
               <div className='col-md-3  '><button className='btn bg-primary text-white' onClick={()=>ctx.removeItem(Item.id)}> eliminar </button> </div>
             </div>
