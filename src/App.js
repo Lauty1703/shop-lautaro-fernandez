@@ -4,21 +4,21 @@ import ItemListContainer from "./components/ItemsListContainer";
 import Navbar from "./components/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart";
-import CarContextProvider from "./components/CartContext";
+import CartContextProvider from "./components/CartContext";
 
 const App = () => {
   return (
-    <CarContextProvider>
+    <CartContextProvider>
     <BrowserRouter>
-      <Navbar/>
+      <Navbar />
       <Routes>
-        <Route  path="/" element={< ItemListContainer  />}></Route>
-        <Route  path="/categoryId/:id" element={< ItemListContainer  />}></Route>
-        <Route  path="/item/:id" element ={<ItemDetailContainer />}></Route>
-        <Route path="/cart" element={<Cart/>}></Route>
+        <Route  path="/" element={<ItemListContainer />}/>
+        <Route  path="/categoria/:categoria" element={<ItemListContainer/>}/>
+        <Route  path="/Item/:id" element={<ItemDetailContainer/>}/>
+        <Route  path="/cart" element={<Cart/>}/>
       </Routes>
     </BrowserRouter>
-    </CarContextProvider>
+    </CartContextProvider>
    
   );
 }

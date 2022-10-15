@@ -1,27 +1,29 @@
 
 
 import { useEffect, useState } from "react"
-import products from "./products"
-import FechData from "./FechData"
 import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router-dom"
-const ItemDetailContainer = ({ saludo }) => {
+ import {getFirestore,doc,getDoc} from 'firebase/firestore'
 
+ const ItemDetailContainer = () => {
 
-    const [data, setData] = useState({});
-    const {id} =useParams();
+    const [dato,setDato]=useState({})
+    //obtener el id que viene por URL
+    const {id}=useParams()
 
     useEffect(() => {
-        FechData(2000, products.find(item=>item.id === parseInt(id)) )
-            .then(data => setData(data))
-    }, [id])
-
-    return <>
-
-        <div className="container"><ItemDetail producto={data} /></div>
-        <h1>{saludo}</h1>
-
-
-    </>
+      const querydb=getFirestore();
+      const queryDoc=doc(querydb,'products',id)
+      getDoc(queryDoc)
+      .then(res=>setDato({id:res.id,...res.data()}))
+    
+      
+    },[id])
+    
+  return (
+    <div>
+        <ItemDetail data={dato}/>
+    </div>
+  )
 }
-export default ItemDetailContainer;
+export default ItemDetailContainer

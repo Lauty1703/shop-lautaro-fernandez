@@ -17,9 +17,9 @@ const ItemCount = ({ initial, stock,onAdd}) => {
 
    
     return <><div className="text-center justify-content-center bg-light  btn-card-container">
-        <div className="">
+        <div className="d-flex">
             <button className="btn " onClick={() => restar()}>-</button>
-            <spam className="fs-4">{contador}</spam>
+            <div className="fs-4 pt-3">{contador}</div>
             <button className="btn" onClick={() => sumar()}>+</button>
 
         </div>

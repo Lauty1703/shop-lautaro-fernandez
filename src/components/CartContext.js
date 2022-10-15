@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-const CarContextProvider = ({children})=>{
+const CartContextProvider = ({children})=>{
 
     const[cartList,setCartList]=useState([]);
 
@@ -32,6 +32,16 @@ const CarContextProvider = ({children})=>{
     const isInCart = (id) => {
         return cartList.find(item => item.id === id);
     }
+    const totalCantidad = () => {
+        let totalCan = cartList.map(item => item.qty)
+        return(
+            totalCan.reduce((acumulador, qty) => acumulador += qty, 0)
+        )
+    }
+    const totalPrice = () => {
+        return cartList.reduce((acumulador, item) => acumulador += (item.qty * item.precio), 0);
+      
+    }  
 
     return(
         <CartContext.Provider value={{
@@ -39,11 +49,11 @@ const CarContextProvider = ({children})=>{
             addItem,
             clear,
             removeItem,
-            isInCart}}>
+            isInCart,totalCantidad,totalPrice}}>
             {children} 
 
         </CartContext.Provider>
     )
 }
 
-export default CarContextProvider;
+export default CartContextProvider;

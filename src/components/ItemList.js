@@ -9,7 +9,7 @@ const ItemList = ({data}) => {
       {
         data.map(item => (
           <Item key={item.id} id={item.id} title={item.nombre} imagen={item.imagen}  precio={item.precio}
-          />
+          precioOld={item.precioOld} stock={item.stock}/>
         ))}
     </div>
   </>)

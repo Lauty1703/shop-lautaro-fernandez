@@ -22,7 +22,7 @@ html {
 
 }
 .nav-link:hover{
-  color:rgb(194, 194, 194)
+  color:rgb(104, 254, 187)
 }
 .icono-carrito{
   font-size: 3rem;
@@ -49,4 +49,11 @@ html {
   border-color:  #4f92f6;
   border-radius: 10px;
   font-size: 25px;
+}
+.bg-color{ color: #7eda76;
+border: 1px solid #7eda76;
+border-radius: 8px;
+}
+.precio-old{color: #898888;
+text-decoration: line-through;
 }

@@ -11,13 +11,13 @@ const Navbar =()=> {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 " id="lista">
             <li className="nav-item">
-            <Link className="nav-link " to="/categoryId/2">OFERTAS</Link>
+            <Link className="nav-link " to="/categoria/2">OFERTAS</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link " to="/categoryId/3">PRODUCTOS</Link>
+              <Link className="nav-link " to="/categoria/3">PRODUCTOS</Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link " to="/categoryId/1">TOP</Link>
+            <Link className="nav-link " to="/categoria/1">TOP</Link>
             </li>
           </ul>
           <div> <Link className="nav-link " to="/cart"><CartWidget /></Link></div>

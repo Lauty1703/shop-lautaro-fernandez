@@ -1,4 +1,5 @@
 let products=[{
+    stock:25,
     id: 1,
     categoryId:1,
     nombre: 'helado de chocolate ',
@@ -7,7 +8,7 @@ let products=[{
     imagen: "https://i.ibb.co/1zffcnp/oferta2.jpg",
     descripcion_corta: 'helado de crema y oreo de 1 kilo',
     descripcion: 'la mejor combinacion de de galletitas oreo y crema americana'
-}, {
+}, {stock:25,
     id: 2,
     categoryId:3,
     nombre: 'helado de dulce de leche ',
@@ -15,7 +16,7 @@ let products=[{
     precio: 2000,
     imagen: "https://i.ibb.co/6tgqCVf/oferta1.jpg",
     descripcion_corta: 'helado cofler de 1 kilo',
-},{
+},{stock:25,
     id: 3,
     categoryId:3,
     nombre: 'helado de frutilla ',
@@ -25,7 +26,7 @@ let products=[{
     descripcion_corta: 'helado cofler de 1 kilo',
 
 }
-,{
+,{stock:25,
     id: 4,
     categoryId:3,
     nombre: 'helado de chocolate',
@@ -35,7 +36,7 @@ let products=[{
     descripcion_corta: 'helado coffee de 1 kilo',
 
 }
-,{
+,{stock:25,
     id: 5,
     categoryId:2,
     nombre: 'galletas de chocolate',
@@ -46,6 +47,7 @@ let products=[{
 
 }
 ,{
+    stock:25,
     id: 6,
     categoryId:2,
     nombre: 'helado de galleta de cholate',
