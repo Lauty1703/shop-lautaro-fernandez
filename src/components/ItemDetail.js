@@ -25,7 +25,7 @@ const ItemDetail = ({data}) => {
                     <img
                         src={data.imagen}
                         alt="Trendy Pants and Shoes"
-                        className="img-fluid rounded-start"
+                        className="img-fluid rounded-start "
                     />
                 </div>
                 <div className="col-md-5">
@@ -42,11 +42,10 @@ const ItemDetail = ({data}) => {
                         </p>
                     </div>
                 </div>
-                <div className='col-md-4 text-center justify-content-center'>
+                <div className='col-md-4 text-center justify-content-center mt-5'>
                     {contador===0 
                     ?<ItemCount stock={data.stock} initial={contador} onAdd={onAdd} />
-                    : <Link to="/Cart"><button type="button" className="btn btn-primary">Finalizar compra</button>
-</Link>
+                    : <Link to="/Cart"><button type="button" className="btn bg-color">Finalizar compra</button></Link>
                     }
                 </div>
                 

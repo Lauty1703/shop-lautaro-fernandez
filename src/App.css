@@ -1,59 +1,134 @@
 * {
- 
+
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 
-.title-icono{
+.title-icono {
   font-size: 3rem;
   font-weight: 800;
 }
-.title-shop{
+
+.title-shop {
   color: rgb(195, 115, 211);
 }
+
 .nav-link {
   font-size: 2rem;
   color: black;
 
 }
-.nav-link:hover{
-  color:rgb(104, 254, 187)
+
+.nav-link:hover {
+  color: rgb(208, 104, 192);
 }
-.icono-carrito{
+
+.icono-carrito {
   font-size: 3rem;
   padding-bottom: 10px;
 }
-#card{
+
+#card {
   width: 25rem;
 }
-.btn-card-container{
+
+.btn-card-container {
   margin: 0 auto;
   width: 250px;
 }
-.btn{
+
+.btn {
   margin: 2px 25px;
-  color: #4f92f6;
+  color: rgb(195, 115, 211);
   font-size: 2rem;
   border: none;
   padding: 5px 20px;
 }
-.btn-carrito{
+
+.btn-carrito {
   margin: 5px 0px;
   padding: 10px 28px;
-  color: #4f92f6;
-  border-color:  #4f92f6;
+  color: rgb(195, 115, 211);
+  border-color: rgb(195, 115, 211);
   border-radius: 10px;
   font-size: 25px;
 }
-.bg-color{ color: #7eda76;
-border: 1px solid #7eda76;
-border-radius: 8px;
+
+.bg-color {
+  color: rgb(195, 115, 211);
+  border: 1px solid rgb(195, 115, 211);
+  border-radius: 8px;
 }
-.precio-old{color: #898888;
-text-decoration: line-through;
+
+.bg-color:hover {
+  color: rgb(208, 104, 192);
+  background-color: #e0e0e0;
+}
+
+.precio-old {
+  color: #898888;
+  text-decoration: line-through;
+}
+
+.bg-color-cart {
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+.img-detail {
+  height: 100%;
+  border-radius: 15px;
+}
+
+.bg-color-btn-cart {
+  background-color: #ea55c7;
+}
+
+footer {
+  margin-top: 50px;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, rgba(133, 35, 35, 0.975525) 100%);
+}
+
+footer .title-footer {
+  font-size: 4.5rem;
+}
+
+footer .title-footer .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+footer .subtitulo-footer {
+  font-size: 2rem;
+  color: #c9c9c9;
+}
+
+footer .text-a {
+  font-size: 1.5rem;
+}
+
+footer .color-a {
+  color: #848484;
+}
+
+footer .color-a:hover {
+  color: #435ED0 !important;
+}
+
+footer .text-descripcion-footer {
+  font-size: 1.5rem;
+  color: #c9c9c9;
+}
+
+footer .text-coyright {
+  font-size: 1.8rem;
 }

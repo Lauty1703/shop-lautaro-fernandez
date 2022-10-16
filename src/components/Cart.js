@@ -1,5 +1,6 @@
 import { collection, doc, increment, serverTimestamp, setDoc, updateDoc } from 'firebase/firestore'
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { CartContext } from './CartContext'
 import db from './firebaseConfig'
 
@@ -7,37 +8,36 @@ import db from './firebaseConfig'
 const Cart = () => {
   const ctx = useContext(CartContext)
   const createOrder=async()=>{
+    const itemsForDB = ctx.cartList.map(item => ({
+      id: item.id,
+      title: item.nombre,
+      price: item.precio,
+      quantity: item.qty
+  }))
     let order={
       buyer:{
         name:"leonel messi",
         email:"pulga@gmail.com",
         phone:"11-5046-2890"
       },
-      items:ctx.cartList.map(item=>({
-        id:item.id,
-        title:item.nombre,
-        precio:item.precio,
-        quantity:item.qty
-      })),
+      items:itemsForDB,
       date:serverTimestamp(),
       total:ctx.totalPrice() 
 
     }
+     const newOrderRef = doc(collection(db, "orders"))
+            await setDoc(newOrderRef, order);
   
-  const newOrderRef = doc(collection(db, "orders"))
-        await setDoc(newOrderRef, order)
 
-        ctx.cartList.forEach( async (item) => {
-          const itemRef = doc(db, "products", item.id);
-          await updateDoc(itemRef, {
-              stock: increment(-item.qty)
-          });
+            ctx.cartList.forEach(async (product) => {
+              const itemRef = doc(db, "products", product.id)
+              await updateDoc(itemRef, { stock: increment(-product.qty) });
       })
       ctx.clear()
 
       alert("Orden creada: " + newOrderRef.id)
     }
-  console.log(ctx.cartList)
+
   return (
     <>
 
@@ -53,9 +53,9 @@ const Cart = () => {
               ctx.cartList.map(Item => (
                 <div key={Item.id} className='container justify-content-center text-center '>
 
-                  <div className='row  bg-light align-items-center'>
+                  <div className='row  bg-color-cart align-items-center'>
                     <div className='col-md-3'>
-                      <img variant="card-img-top" src={Item.imagen} alt="imagen producto" />
+                      <img variant="card-img-top " className='img-detail' src={Item.imagen} alt="imagen producto" />
                     </div>
                     <div className='col-md-6  justify-content-start" '>
                       <h2 className='p-2 fs-2 mt-3'>{Item.nombre}  </h2>
@@ -63,7 +63,7 @@ const Cart = () => {
                       <p className='p-2 fs-3  '>Cantidad: x { Item.qty}</p>
                       <p className='p-2  fs-3 '>Subtotal ${Item.precio * Item.qty}</p>
                     </div>
-                    <div className='col-md-3  '><button className='btn bg-primary text-white' onClick={() => ctx.removeItem(Item.id)}> eliminar </button> </div>
+                    <div className='col-md-3  '><button className='btn bg-danger text-white' onClick={() => ctx.removeItem(Item.id)}> Delete </button> </div>
                   </div>
                  
 
@@ -72,12 +72,16 @@ const Cart = () => {
 
 
             }
-          </div> <div className='text-center'>
-                  <button className='btn bg-dark text-white' onClick={createOrder}> ordenar compra </button> 
-                    
+          </div>
+           <div className='text-center'>
+                  <button className='btn bg-dark text-white mt-5' onClick={createOrder}> ordenar compra </button> 
+
+                 
                   </div>
         </>
-        : <h2>No hay productos</h2>}</>
+        :
+        <div>  <h2 className='text-center justify-content-center'>No hay productos</h2><Link className=" btn nav-link bg-color text-white bg-color-btn-cart " to={"/"}>ir al menu de productos</Link></div>}
+    </>
   )
 }
 
