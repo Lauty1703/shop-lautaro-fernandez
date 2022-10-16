@@ -14,9 +14,6 @@ Esto nos permite traer informacion necesaria de la base de datos como para selec
 - Instalar las dependencias - npm install
 - Ejecutar el proyecto - npm start
 
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
 
 ## Autor
 Fernandez  Montenegro Lautaro
