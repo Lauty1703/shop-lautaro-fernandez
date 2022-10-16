@@ -9,9 +9,10 @@ La aplicacion web esta vinculada a una base de datos de "firestore", que nos per
 Esto nos permite traer informacion necesaria de la base de datos como para seleccionar ciertos productos, visualizar los detalles de los mismos, agregarlos al carrito, solicitar datos de los cliente, simular la compra de los productos y crear ordenes de compra.
 
 ## Instalación 🔧
-Clonar el repositorio - git clone https://github.com/Lauty1703/shop-lautaro-fernandez.git
-Instalar las dependencias - npm install
-Ejecutar el proyecto - npm start
+- Clonar el repositorio - git clone https://github.com/Lauty1703/shop-lautaro-fernandez.git
+
+- Instalar las dependencias - npm install
+- Ejecutar el proyecto - npm start
 
 This text you see here is *actually- written in Markdown! To get a feel
 for Markdown's syntax, type some text into the left window and
